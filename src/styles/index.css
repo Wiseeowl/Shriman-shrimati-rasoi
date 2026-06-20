@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Source+Serif+4:ital@0;1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-maroon: #800020;
+  --color-brand-orange: #F88F22;
+  --color-brand-deepOrange: #E07B18;
+  --color-brand-gold: #FBB931;
+  --color-base-cream: #FFE3B3;
+  --color-base-white: #FFFFFF;
+  
+  --font-poppins: 'Poppins', sans-serif;
+  --font-source-serif: 'Source Serif 4', serif;
+}
+
+@layer base {
+  :root {
+    --radius: 1rem;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-poppins);
+    color: var(--color-gray-800);
+    background-color: color-mix(in srgb, var(--color-base-cream) 20%, transparent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .liquid-glass {
+    background: transparent;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.15), 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .liquid-glass-strong {
+    background: transparent;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.05), 0 12px 40px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .liquid-glass {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .liquid-glass-strong {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  }
+
+  @supports not (backdrop-filter: blur(10px)) {
+    .liquid-glass {
+      background-color: color-mix(in srgb, var(--color-white) 95%, transparent);
+      border-color: var(--color-gray-200);
+      box-shadow: var(--shadow-sm);
+    }
+    .liquid-glass-strong {
+      background-color: var(--color-white);
+      border-color: var(--color-gray-200);
+      box-shadow: var(--shadow-md);
+    }
+  }
+
+  /* Hero Animations */
+  .hero-anim {
+    opacity: 0;
+    transform: translateY(32px);
+    animation: heroFadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+
+  .hero-reveal {
+    animation: heroReveal 1s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+
+  .hero-fade {
+    animation: heroFade 1s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim, .hero-reveal, .hero-fade {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
