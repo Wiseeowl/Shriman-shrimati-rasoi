@@ -26,7 +26,7 @@ function DeliveryItemCard({ item }: { item: typeof deliveryItems[0] }) {
   const quantity = cartItem?.quantity || 0;
 
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 group flex flex-col h-full hover:shadow-md transition-shadow">
+    <div className="relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 group flex flex-col h-full hover:shadow-md transition-shadow">
       {item.isSpicy && (
         <div className="absolute top-4 right-4 z-10 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-md flex items-center gap-1 shadow-md">
           <Flame size={12} /> Spicy
