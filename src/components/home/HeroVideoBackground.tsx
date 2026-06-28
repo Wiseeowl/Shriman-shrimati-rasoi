@@ -48,7 +48,7 @@ export default function HeroVideoBackground() {
               width: '100%',
               height: '100%',
               zIndex: 1,
-              opacity: splineReady ? 0.1 : 0,
+              opacity: splineReady ? 0.3 : 0,
               transition: 'opacity 0.8s ease',
               pointerEvents: 'all', // Allow cursor interaction with the 3D scene
             }}
