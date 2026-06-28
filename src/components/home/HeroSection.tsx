@@ -28,8 +28,11 @@ export default function HeroSection() {
             <div className={`relative z-10 flex flex-wrap gap-4 mb-10 hero-fade [animation-delay:0.7s] ${!featureFlags.SHOW_TODAYS_SPECIAL ? 'justify-center' : ''}`}>
               <Link 
                 to="/order" 
-                className="bg-brand-orange text-white rounded-full px-8 py-3.5 font-medium transition-all hover:scale-105 active:scale-95 hover:bg-brand-deepOrange shadow-[0_12px_30px_rgba(248,143,34,0.6)] border border-white/30 backdrop-blur-sm"
-                style={{ boxShadow: '0 12px 30px rgba(248,143,34,0.5), inset 0 2px 4px rgba(255,255,255,0.4)' }}
+                className="text-white rounded-full px-8 py-3.5 font-medium transition-all hover:scale-105 active:scale-95 border border-white/30"
+                style={{ 
+                  backgroundColor: '#F88F22',
+                  boxShadow: '0 12px 30px rgba(248,143,34,0.6), inset 0 2px 4px rgba(255,255,255,0.4)' 
+                }}
               >
                 Order Now
               </Link>
