@@ -8,12 +8,12 @@ export default function HeroSection() {
     <section className="relative w-full h-dvh min-h-[600px] overflow-hidden flex items-center justify-center">
       <HeroVideoBackground />
       {/* Content Layer */}
-      <div className="w-full px-2 md:px-8 relative z-10 pt-20 pb-10 flex flex-col justify-center h-full">
+      <div className="w-full px-2 md:px-8 relative z-10 pt-20 pb-10 flex flex-col justify-center h-full pointer-events-none">
         
         <div className={`flex flex-col lg:flex-row gap-8 w-full ${!featureFlags.SHOW_TODAYS_SPECIAL ? 'w-[95%] max-w-none mx-auto items-center text-center' : 'w-full mx-auto'}`}>
           
           {/* Main Glass Panel */}
-          <div className={`relative overflow-hidden rounded-3xl p-8 sm:p-12 flex flex-col justify-center ${featureFlags.SHOW_TODAYS_SPECIAL ? 'lg:w-[65%]' : 'w-full items-center text-center'}`}>
+          <div className={`relative overflow-hidden rounded-3xl p-8 sm:p-12 flex flex-col justify-center pointer-events-auto ${featureFlags.SHOW_TODAYS_SPECIAL ? 'lg:w-[65%]' : 'w-full items-center text-center'}`}>
             
             <h1 className="relative z-10 text-4xl sm:text-6xl lg:text-7xl tracking-[-0.03em] leading-tight mb-4">
               <span className="block text-gray-900 font-poppins font-semibold hero-reveal [animation-delay:0.25s]">
@@ -53,7 +53,7 @@ export default function HeroSection() {
           
           {/* Today's Special Panel (Feature Flagged) */}
           {featureFlags.SHOW_TODAYS_SPECIAL && (
-            <div className="lg:w-[35%] flex flex-col justify-end">
+            <div className="lg:w-[35%] flex flex-col justify-end pointer-events-auto">
               <TodaysSpecialPanel />
             </div>
           )}
