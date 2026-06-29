@@ -27,31 +27,12 @@ export default function HeroVideoBackground() {
     splineRef.current = splineApp;
 
     try {
-      // 1. Make sphere 20% smaller
+      // Make sphere 20% smaller
       const sphere = splineApp.findObjectByName('Sphere');
       if (sphere) {
         sphere.scale.x *= 0.8;
         sphere.scale.y *= 0.8;
         sphere.scale.z *= 0.8;
-      }
-
-      // 2. Swap colors between Sphere and glass tiles
-      const glassTiles = splineApp.findObjectByName('glass tiles');
-      if (sphere && glassTiles) {
-        // Read current colors
-        const sphereColor = { r: sphere.color.r, g: sphere.color.g, b: sphere.color.b };
-        const glassColor = { r: glassTiles.color.r, g: glassTiles.color.g, b: glassTiles.color.b };
-
-        // Swap: glass color → sphere, sphere color → glass
-        sphere.color.r = glassColor.r;
-        sphere.color.g = glassColor.g;
-        sphere.color.b = glassColor.b;
-
-        glassTiles.color.r = sphereColor.r;
-        glassTiles.color.g = sphereColor.g;
-        glassTiles.color.b = sphereColor.b;
-
-        console.log('✅ Swapped colors and resized sphere');
       }
     } catch (err) {
       console.warn('Spline object manipulation error:', err);
@@ -62,7 +43,6 @@ export default function HeroVideoBackground() {
 
   return (
     <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
-      {/* Video layer — always visible at original brightness */}
       <video
         autoPlay
         loop
@@ -73,7 +53,6 @@ export default function HeroVideoBackground() {
         <source src={heroVideo} type="video/mp4" />
       </video>
 
-      {/* Spline 3D layer */}
       {shouldLoad && (
         <Suspense fallback={null}>
           <Spline
