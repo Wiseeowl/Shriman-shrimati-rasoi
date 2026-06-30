@@ -27,10 +27,10 @@ export default function HeroVideoBackground() {
       <div
         className="absolute inset-0 z-[1]"
         style={{
-          background: 'rgba(255, 255, 255, 0.035)',
-          backdropFilter: 'blur(5.5px)',
-          WebkitBackdropFilter: 'blur(5.5px)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.07)',
+          background: 'rgba(255, 255, 255, 0.017)',
+          backdropFilter: 'blur(2.75px)',
+          WebkitBackdropFilter: 'blur(2.75px)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.035)',
         }}
       />
     </div>
