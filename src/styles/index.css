@@ -2,12 +2,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-maroon: 128 0 32;
-  --color-brand-orange: 248 143 34;
-  --color-brand-deepOrange: 224 123 24;
-  --color-brand-gold: 251 185 49;
-  --color-base-cream: 255 227 179;
-  --color-base-white: 255 255 255;
+  --color-brand-maroon: #800020;
+  --color-brand-orange: #F88F22;
+  --color-brand-deepOrange: #E07B18;
+  --color-brand-gold: #FBB931;
+  --color-base-cream: #FFE3B3;
+  --color-base-white: #FFFFFF;
 
   --font-poppins: 'Poppins', sans-serif;
   --font-source-serif: 'Source Serif 4', serif;
