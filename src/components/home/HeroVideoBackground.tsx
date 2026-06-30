@@ -23,16 +23,6 @@ export default function HeroVideoBackground() {
         <source src={heroVideo} type="video/mp4" />
       </video>
 
-      {/* Frosted glass overlay */}
-      <div
-        className="absolute inset-0 z-[1]"
-        style={{
-          background: 'rgba(255, 255, 255, 0.017)',
-          backdropFilter: 'blur(2.75px)',
-          WebkitBackdropFilter: 'blur(2.75px)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.035)',
-        }}
-      />
     </div>
   );
 }
