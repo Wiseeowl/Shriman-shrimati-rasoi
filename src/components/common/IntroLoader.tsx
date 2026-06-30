@@ -2,16 +2,20 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function IntroLoader() {
-  const [isVisible, setIsVisible] = useState(true);
+  const hasSeenIntro = sessionStorage.getItem('hasSeenIntro');
+  const [isVisible, setIsVisible] = useState(!hasSeenIntro);
 
   useEffect(() => {
+    if (hasSeenIntro) return;
+
     // Hide the loader after 3.5 seconds
     const timer = setTimeout(() => {
       setIsVisible(false);
+      sessionStorage.setItem('hasSeenIntro', 'true');
     }, 3500);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [hasSeenIntro]);
 
   return (
     <AnimatePresence>
