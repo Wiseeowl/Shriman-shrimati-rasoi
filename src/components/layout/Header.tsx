@@ -34,9 +34,7 @@ export default function Header() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Menu', path: '/#menu' },
-    { name: 'Order Now', path: '/order' },
-    { name: 'Delivery', path: '/delivery' },
+    { name: 'Menu', path: '/order' },
     { name: 'About Us', path: '/#about' },
     { name: 'Contact', path: '/#contact' },
   ];
@@ -113,7 +111,7 @@ export default function Header() {
                 'Login'
               )}
             </button>
-            <Button size="sm" onClick={() => window.location.href='/order'}>Order Now</Button>
+
           </div>
         </div>
 
