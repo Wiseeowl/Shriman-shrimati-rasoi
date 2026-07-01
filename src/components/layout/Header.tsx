@@ -47,7 +47,7 @@ export default function Header() {
     >
       <div
         className={`absolute inset-0 transition-opacity duration-300 ${
-          isScrolledPastHero ? 'liquid-glass opacity-100' : 'opacity-0'
+          isScrolledPastHero ? 'bg-white/90 backdrop-blur-md shadow-sm opacity-100' : 'opacity-0'
         }`}
       />
 
